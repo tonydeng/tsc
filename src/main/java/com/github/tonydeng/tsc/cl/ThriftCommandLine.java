@@ -1,4 +1,4 @@
-package com.github.tonydeng.tsc;
+package com.github.tonydeng.tsc.cl;
 
 import org.apache.commons.cli.*;
 
