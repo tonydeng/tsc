@@ -1,6 +1,7 @@
 package com.github.tonydeng.tsc.cl;
 
 import org.apache.commons.cli.*;
+import org.apache.commons.lang3.StringUtils;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -43,7 +44,7 @@ public class ThriftCommandLine {
                     printHelp(options);
                 }
 
-            }else {
+            } else {
                 printHelp(options);
             }
             return cl;
@@ -55,7 +56,45 @@ public class ThriftCommandLine {
 
     }
 
+    /**
+     * 活动thrift server的启动配置
+     *
+     * @param options
+     * @param args
+     * @return
+     */
+    public static ThriftInfo getCommandInfo(Options options, String[] args) {
+        return getCommandInfo(checkCommand(options, args));
+    }
 
+    /**
+     * 活动thrift server的启动配置
+     *
+     * @param cl
+     * @return
+     */
+    public static ThriftInfo getCommandInfo(CommandLine cl) {
+        ThriftInfo info = new ThriftInfo();
+        if (null != cl) {
+            if (cl.hasOption("a")) {
+                info.setHost(getLocalIp());
+            } else {
+                if (StringUtils.isEmpty(cl.getOptionValue("h"))) {
+                    info.setHost(getLocalIp());
+                }
+                if (StringUtils.isNumeric(cl.getOptionValue("p"))) {
+                    info.setPort(Integer.valueOf(cl.getOptionValue("p")));
+                }
+            }
+        }
+        return info;
+    }
+
+    /**
+     * 打印command的帮助信息
+     *
+     * @param options
+     */
     private static void printHelp(Options options) {
         HelpFormatter f = new HelpFormatter();
         f.printHelp("OptionTip", options);
@@ -64,6 +103,7 @@ public class ThriftCommandLine {
 
     /**
      * 获得本地
+     *
      * @return
      */
     public static String getLocalIp() {
