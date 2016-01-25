@@ -43,7 +43,6 @@ public class ThriftCommandLine {
                 if (cl.hasOption("help")) {
                     printHelp(options);
                 }
-
             } else {
                 printHelp(options);
             }
@@ -81,6 +80,8 @@ public class ThriftCommandLine {
             } else {
                 if (StringUtils.isEmpty(cl.getOptionValue("h"))) {
                     info.setHost(getLocalIp());
+                }else{
+                    info.setHost(cl.getOptionValue("h"));
                 }
                 if (StringUtils.isNumeric(cl.getOptionValue("p"))) {
                     info.setPort(Integer.valueOf(cl.getOptionValue("p")));
