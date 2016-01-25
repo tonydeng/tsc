@@ -25,8 +25,6 @@ public class ThriftServer {
             InetSocketAddress address = new InetSocketAddress(host,port);
             TServerTransport transport = new TServerSocket(address);
             TThreadPoolServer.Args args = new TThreadPoolServer.Args(transport)
-//                    .inputTransportFactory(new TFramedTransport.Factory())
-//                    .outputTransportFactory(new TFramedTransport.Factory())
                     .protocolFactory(new TCompactProtocol.Factory())
                     .processor(processor);
 
