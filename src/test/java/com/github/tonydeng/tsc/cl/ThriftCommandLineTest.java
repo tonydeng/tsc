@@ -14,8 +14,6 @@ public class ThriftCommandLineTest {
     private static Options options;
     private static String[] args;
 
-    private final ThriftCommandLine thriftCommandLine = new ThriftCommandLine();
-
     @Before
     public void init() {
         options = ThriftCommandLine.initOptions("tsc");
