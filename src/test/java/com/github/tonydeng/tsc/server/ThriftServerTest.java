@@ -1,6 +1,7 @@
 package com.github.tonydeng.tsc.server;
 
 import com.github.tonydeng.thrift.PingPongService;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +9,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Created by tonydeng on 16/1/25.
  */
+@Ignore
 public class ThriftServerTest {
     private static final Logger log = LoggerFactory.getLogger(ThriftServerTest.class);
 

@@ -5,12 +5,14 @@ import com.github.tonydeng.thrift.PingPongService;
 import com.github.tonydeng.thrift.Pong;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.thrift.TException;
+import org.junit.Ignore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Created by tonydeng on 15/9/28.
  */
+@Ignore
 public class PingPongServiceHandler implements PingPongService.Iface {
 
     private static  final Logger log = LoggerFactory.getLogger(PingPongServiceHandler.class);

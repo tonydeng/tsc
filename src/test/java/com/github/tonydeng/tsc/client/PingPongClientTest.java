@@ -10,6 +10,7 @@ import com.github.tonydeng.thrift.Pong;
 import com.google.common.collect.Lists;
 import org.apache.thrift.TException;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +21,7 @@ import java.util.Properties;
 /**
  * Created by tonydeng on 16/1/25.
  */
+@Ignore
 public class PingPongClientTest {
     private static final Logger log = LoggerFactory.getLogger(PingPongClientTest.class);
 
