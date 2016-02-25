@@ -12,6 +12,7 @@ import java.util.Enumeration;
  * Created by tonydeng on 16/1/25.
  */
 public class ThriftCommandLine {
+
     /**
      * 初始化命令行参数
      *
@@ -21,10 +22,10 @@ public class ThriftCommandLine {
     public static Options initOptions(String project) {
         Options options = new Options();
 
-        options.addOption("help", false, "Print help for BlueBird");
-        options.addOption("h", "host", true, "BLueBird Server Run TCP IPAddress");
-        options.addOption("p", "port", true, "BlueBird Server Run TCP PORT");
-        options.addOption("a", "auto", false, "BlueBird Server Auto Run TCP IPAddress And PORT");
+        options.addOption("help", false, "Print help for "+project);
+        options.addOption("h", "host", true, project+" Server Run TCP IPAddress");
+        options.addOption("p", "port", true, project+" Server Run TCP PORT");
+        options.addOption("a", "auto", false, project+" Server Auto Run TCP IPAddress And PORT");
         return options;
     }
 
@@ -53,6 +54,16 @@ public class ThriftCommandLine {
         }
         return null;
 
+    }
+
+    /**
+     *
+     * @param project
+     * @param args
+     * @return
+     */
+    public static ThriftInfo getCommandInfo(String project, String[] args){
+        return getCommandInfo(initOptions(project),args);
     }
 
     /**
