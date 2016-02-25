@@ -3,14 +3,14 @@
     <groupId>com.github.tonydeng</groupId>
     <artifactId>tsc</artifactId>
     <packaging>jar</packaging>
-    <version>0.2</version>
+    <version>0.3-SNAPSHOT</version>
     <name>tsc</name>
     <url>http://maven.apache.org</url>
 
     <scm>
         <connection>scm:git:git@git.cimyun.com:commons/tsc.git</connection>
         <developerConnection>scm:git:git@git.cimyun.com:commons/tsc.git</developerConnection>
-        <tag>tsc-0.2</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <properties>
