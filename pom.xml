@@ -3,7 +3,7 @@
     <groupId>com.github.tonydeng</groupId>
     <artifactId>tsc</artifactId>
     <packaging>jar</packaging>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.3-SNAPSHOT</version>
     <name>tsc</name>
     <url>http://maven.apache.org</url>
 
